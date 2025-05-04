@@ -34,6 +34,26 @@ Purpose: Implementing the predictive models, training, and evaluating performanc
 
 To run the project and predict flight delays using the web application:
 
+1) Install Dependencies
+If you haven't already, make sure to install the required dependencies listed in requirements.txt:
+
+```bash
+pip install -r requirements.txt
+```
+
+2) Run the Flask Application
+In your terminal, navigate to the project directory and run the following command:
+
 ```bash
 flask run
 ```
+
+This will start the Flask development server.
+
+3) Access the Web Application
+Once the Flask server is running, open your web browser and go to:
+
+```bash
+http://127.0.0.1:5000/
+```
+Here, you'll be able to interact with the web application, input flight details, and see the prediction for flight delays.
