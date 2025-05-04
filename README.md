@@ -18,19 +18,36 @@ https://developer.ibm.com/exchanges/data/all/airline/
 
 **Repository Notebook Structure**
 
-- eda.ipynb
-
+1) eda.ipynb
 Purpose: Initial exploration of the dataset to understand the features, distributions, missing values, and identify correlations.
 
-- cleaning.ipynb
-
+2) cleaning.ipynb
 Purpose: Cleaning the data by handling missing values, fixing inconsistencies, and preparing the dataset for modeling.
 
-
-- delay_feature_analysis.ipynb
-
+3) delay_feature_analysis.ipynb
 Purpose: Focus on analyzing and refining the features specifically related to flight delays — identifying which factors most significantly impact delays.
 
-- modeling.ipynb
-
+4) modeling.ipynb
 Purpose: Implementing the predictive models, training, and evaluating performance (accuracy, F1, etc.) based on the selected features.
+
+**How to Run the Project**
+
+To run the project and predict flight delays using the web application:
+
+**Install Dependencies**
+
+Open your terminal and navigate to the project directory. Then, install the required dependencies by running:
+
+bash
+Copy
+Edit
+pip install -r requirements.txt
+Run the Flask Application
+In your terminal, make sure you're in the project folder. Then, run the Flask application using the following command:
+
+bash
+Copy
+Edit
+flask run
+Access the Web Application
+Once the server is running, open your web browser and go to http://127.0.0.1:5000/ to access the web application where you can input flight details and get delay predictions.
