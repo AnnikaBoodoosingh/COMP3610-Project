@@ -34,4 +34,6 @@ Purpose: Implementing the predictive models, training, and evaluating performanc
 
 To run the project and predict flight delays using the web application:
 
+```bash
 flask run
+```
