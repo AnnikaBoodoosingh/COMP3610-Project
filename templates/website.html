@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flight Info Form</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url("{{ url_for('static', filename='background.jpg') }}") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: flex-end; /* Align to the right */
+      align-items: flex-start; /* Align to the top */
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      width: 500px; /* Slightly wider width */
+      display: flex;
+      flex-direction: column;
+    }
+
+    h2 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Two columns */
+      gap: 15px;
+    }
+
+    .form-group {
+      width: 100%;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 6px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #ba461c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      text-align: center; /* Ensure the text is centered in the button */
+    }
+
+    button:hover {
+      background-color: #a13c16;
+    }
+
+    .form-group.full-width {
+      display: flex;
+      justify-content: center; /* Center the button */
+      width: 100%;
+      grid-column: span 2; /* Make button span across both columns */
+    }
+
+    .prediction {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Flight Info</h2>
+    <form method="POST">
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="arrTime">Arrival Time (HHMM)</label>
+        <input type="number" id="arrTime" name="arrTime" placeholder="e.g., 930" required>
+      </div>
+
+      <div class="form-group">
+        <label for="crsElapsedTime">CRS Elapsed Time (minutes)</label>
+        <input type="number" id="crsElapsedTime" name="crsElapsedTime" placeholder="e.g., 180" required>
+      </div>
+
+      <div class="form-group">
+        <label for="distance">Distance (miles)</label>
+        <input type="number" id="distance" name="distance" placeholder="e.g., 1000" required>
+      </div>
+
+      <div class="form-group">
+        <label for="airline">Airline Code</label>
+        <input type="text" id="airline" name="airline" placeholder="e.g., AA" required>
+      </div>
+
+      <div class="form-group">
+        <label for="flightNumber">Flight Number</label>
+        <input type="text" id="flightNumber" name="flightNumber" placeholder="e.g., 1234" required>
+      </div>
+
+      <div class="form-group">
+        <label for="origin">Origin Airport</label>
+        <input type="text" id="origin" name="origin" placeholder="e.g., LAX" required>
+      </div>
+
+      <div class="form-group">
+        <label for="dest">Destination Airport</label>
+        <input type="text" id="dest" name="dest" placeholder="e.g., JFK" required>
+      </div>
+
+      <div class="form-group">
+        <label for="originState">Origin State</label>
+        <input type="text" id="originState" name="originState" placeholder="e.g., CA" required>
+      </div>
+
+      <div class="form-group">
+        <label for="destState">Destination State</label>
+        <input type="text" id="destState" name="destState" placeholder="e.g., NY" required>
+      </div>
+
+      <div class="form-group full-width">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    {% if prediction is not none %}
+    <div class="prediction">
+      Prediction: {{ prediction }}
+    </div>
+    {% endif %}    
+
+  </div>
+</body>
+</html>
