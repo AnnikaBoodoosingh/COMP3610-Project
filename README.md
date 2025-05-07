@@ -18,6 +18,14 @@ https://developer.ibm.com/exchanges/data/all/airline/
 
 **Repository Notebook Structure**
 
+```
+COMP3610-Project/
+├── eda.ipynb
+├── cleaning.ipynb
+├── delay_feature_analysis.ipynb
+├── modeling.ipynb
+```
+
 1) eda.ipynb
 Purpose: Initial exploration of the dataset to understand the features, distributions, missing values, and identify correlations.
 
