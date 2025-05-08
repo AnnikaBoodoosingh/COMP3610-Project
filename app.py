@@ -97,7 +97,7 @@ def predict():
             dmat = xgb.DMatrix(X_input_scaled)
             prob = xgb_model.predict(dmat)[0]
             pred = "Delayed" if prob >= 0.5 else "On-Time"
-            prediction = f"{pred} (probability: {prob:.2f})"
+            prediction = f"{pred} (probability of delay: {prob:.2f})"
 
         except Exception as e:
             prediction = f"Error: {e}"
